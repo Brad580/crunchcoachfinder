@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+const coaches = [
+  {
+    id: '1',
+    name: 'Sean Gray',
+    bio: 'Strength and conditioning specialist with a passion for transforming lives.',
+    certifications: ['CPT', 'CSCS'],
+    imageUrl: "/SeanGray.png" // Assuming images are in the public folder
+  },
+  {
+    id: '2',
+    name: 'Terri Ware',
+    bio: 'Experienced yoga instructor focused on mindful and restorative practices.',
+    certifications: ['RYT-200', 'RYT-500'],
+    imageUrl: "/TerriWare.png"
+  },
+  {
+    id: '3',
+    name: 'Michaela Yerse',
+    bio: 'Certified nutrition coach and personal trainer specializing in holistic health.',
+    certifications: ['CNC', 'CPT'],
+    imageUrl: "/MichaelaYerse.png"
+  }
+];

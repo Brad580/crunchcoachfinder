@@ -1,0 +1,82 @@
+/* src/styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FF6600; /* CR Fitness Holdings' orange color for the background */
+  color: #ffffff; /* White text for better readability on orange background */
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  color: #ffffff; /* White headings for better readability */
+}
+
+/* Styling for the coaches list */
+ul.coaches-list {
+  list-style-type: none; /* Removes default bullet points */
+  padding: 0;
+}
+
+ul.coaches-list li {
+  background-color: #0072ce; /* White background for each coach item */
+  color: #333333; /* Dark grey text for contrast against the white background */
+  padding: 10px;
+  margin-bottom: 5px; /* Space between coach items */
+  border-radius: 5px; /* Rounded corners for the list items */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+
+
+/* Ensure links are visible */
+a {
+  color: #0056b3; /* A distinct color for links, adjust as per the branding guidelines */
+  text-decoration: none; /* Optional: removes underline from links */
+}
+
+a:hover {
+  text-decoration: underline; /* Restores underline on hover for better usability */
+}
+/* Grid container for coaches */
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* This creates a responsive grid */
+  grid-gap: 20px; /* Space between grid items */
+  padding: 20px;
+}
+
+/* Individual coach item styling */
+.coaches-grid-item {
+  background-color: #ffffff; /* White background for each coach item */
+  color: #333333; /* Dark grey text for contrast */
+  padding: 10px;
+  margin-bottom: 5px; /* Space between coach items, if necessary */
+  border-radius: 5px; /* Rounded corners for the items */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.coaches-grid-item:hover {
+  background-color: #ffe5cc; /* Lighter orange on hover for a subtle effect */
+  cursor: pointer; /* Changes the cursor to indicate the item is clickable */
+}
+.mock-calendar {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.blocked-time {
+  border: 1px solid #888;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #e9e9e9; /* Grey background to indicate blocked time */
+}
+.coach-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
