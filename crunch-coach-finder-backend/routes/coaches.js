@@ -28,32 +28,37 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Updating a coach
 router.put('/:id', async (req, res) => {
+  const { id } = req.params;
   try {
-    const coach = await Coach.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!coach) {
-      return res.status(404).json({ message: 'Coach not found' });
+    const updatedCoach = await Coach.findByIdAndUpdate(id, req.body, { new: true, runValidators: true });
+    if (!updatedCoach) {
+      return res.status(404).send({ message: 'Coach not found with id ' + id });
     }
-    res.json(coach);
-  } catch (err) {
-    console.log(err); 
-    res.status(400).json({ message: err.message });
+    res.json(updatedCoach);
+  } catch (error) {
+    if (error.kind === 'ObjectId') {
+      return res.status(400).send({ message: 'Invalid ID format' });
+    }
+    res.status(500).send({ message: error.message });
   }
 });
 
-
+// Deleting a coach
 router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
   try {
-    const coach = await Coach.findByIdAndDelete(req.params.id);
-    if (!coach) {
-      return res.status(404).json({ message: 'Coach not found' });
+    const deletedCoach = await Coach.findByIdAndDelete(id);
+    if (!deletedCoach) {
+      return res.status(404).send({ message: 'Coach not found with id ' + id });
     }
-    res.json({ message: 'Coach deleted successfully' });
-  } catch (err) {
-    console.log(err); 
-    res.status(500).json({ message: err.message });
+    res.send({ message: 'Coach deleted successfully' });
+  } catch (error) {
+    res.status(500).send({ message: error.message });
   }
 });
+
 
 
 module.exports = router;

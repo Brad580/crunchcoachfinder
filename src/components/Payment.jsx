@@ -5,7 +5,6 @@ const Payment = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Process payment here
     console.log('Processing payment...');
   };
 
